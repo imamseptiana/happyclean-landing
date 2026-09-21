@@ -154,24 +154,28 @@ export const serviceItems: ServiceItem[] = [
 
 export const heroGalleryImages: HeroGalleryImage[] = [
   {
-    src: "/images/teknisi.jpeg",
-    alt: "Teknisi HappyClean sedang membersihkan sofa",
+    src: "/images/1.jpg",
+    alt: "HappyClean gallery 1",
   },
   {
-    src: "/before-after/sofa-before.jpeg",
-    alt: "Sofa sebelum dibersihkan",
+    src: "/images/2.jpg",
+    alt: "HappyClean gallery 2",
   },
   {
-    src: "/before-after/sofa-after.jpeg",
-    alt: "Sofa setelah dibersihkan",
+    src: "/images/3.jpeg",
+    alt: "HappyClean gallery 3",
   },
   {
-    src: "/before-after/kasur-before.jpeg",
-    alt: "Kasur sebelum dibersihkan",
+    src: "/images/4.jpeg",
+    alt: "HappyClean gallery 4",
   },
   {
-    src: "/before-after/kasur-after.jpeg",
-    alt: "Kasur setelah dibersihkan",
+    src: "/images/5.jpeg",
+    alt: "HappyClean gallery 5",
+  },
+  {
+    src: "/images/6.PNG",
+    alt: "HappyClean gallery 6",
   },
 ];
 
