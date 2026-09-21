@@ -4,34 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui";
-
-const faqItems = [
-  {
-    question: "Berapa lama pengerjaan?",
-    answer:
-      "Biasanya 1–2 jam, tergantung juga seberapa banyak item yang dikerjakan.",
-  },
-  {
-    question: "Berapa lama kering?",
-    answer:
-      "Proses pengeringan biasanya 2–4 jam dengan bantuan kipas angin atau AC.",
-  },
-  {
-    question: "Apakah aman untuk anak?",
-    answer:
-      "Tentu. Kami menggunakan produk yang aman untuk keluarga dan tetap memperhatikan area yang digunakan anak.",
-  },
-  {
-    question: "Apakah melayani panggilan ke rumah?",
-    answer:
-      "Ya, kami melayani panggilan ke rumah sesuai jadwal dan ketersediaan tim.",
-  },
-  {
-    question: "Apakah bisa pesan jika di luar area Bogor & Depok?",
-    answer:
-      "Bisa, namun kami menyesuaikan dengan ketersediaan staff lapangan di area tersebut.",
-  },
-];
+import { faqItems } from "@/constants";
 
 export function FaqSection() {
   return (

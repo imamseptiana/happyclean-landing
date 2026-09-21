@@ -1,5 +1,9 @@
+"use client";
+
 const waLink =
   "https://wa.me/6285169569089?text=Halo%20HappyClean%2C%20saya%20ingin%20booking";
+
+import { trackCtaClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export function FinalCtaSection() {
   return (
@@ -26,7 +30,10 @@ export function FinalCtaSection() {
                   href={waLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-xl shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-100"
+                  onClick={() =>
+                    trackWhatsAppClick("final_cta_primary", "Booking Sekarang")
+                  }
+                  className="inline-flex items-center justify-center gap-3 rounded-full bg-white px-8 py-4 text-base font-semibold text-slate-950 shadow-xl shadow-slate-950/15 transition hover:-translate-y-0.5 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-600"
                 >
                   <svg
                     viewBox="0 0 24 24"
@@ -41,7 +48,10 @@ export function FinalCtaSection() {
                 </a>
                 <a
                   href="#layanan"
-                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/20"
+                  onClick={() =>
+                    trackCtaClick("Lihat Layanan", "final_cta_secondary")
+                  }
+                  className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-600"
                 >
                   Lihat Layanan
                 </a>
@@ -94,7 +104,10 @@ export function FinalCtaSection() {
           href={waLink}
           target="_blank"
           rel="noreferrer"
-          className="m-4 flex w-[calc(100%-2rem)] max-w-3xl items-center justify-between rounded-3xl bg-slate-950/95 px-6 py-5 text-white shadow-2xl shadow-slate-950/25 transition hover:bg-slate-900"
+          onClick={() =>
+            trackWhatsAppClick("final_cta_mobile_bar", "Booking Sekarang")
+          }
+          className="m-4 flex w-[calc(100%-2rem)] max-w-3xl items-center justify-between rounded-3xl bg-slate-950/95 px-6 py-5 text-white shadow-2xl shadow-slate-950/25 transition hover:bg-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
         >
           <div className="flex items-center gap-4">
             <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#25D366] text-white shadow-lg shadow-emerald-500/20">
@@ -125,7 +138,10 @@ export function FinalCtaSection() {
         href={waLink}
         target="_blank"
         rel="noreferrer"
-        className="fixed bottom-6 right-6 z-50 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_22px_60px_rgba(37,211,102,0.35)] transition hover:-translate-y-0.5"
+        onClick={() =>
+          trackWhatsAppClick("floating_whatsapp", "Chat WhatsApp HappyClean")
+        }
+        className="fixed bottom-6 right-6 z-50 inline-flex h-20 w-20 items-center justify-center rounded-full bg-[#25D366] text-white shadow-[0_22px_60px_rgba(37,211,102,0.35)] transition hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 focus-visible:ring-offset-2"
         aria-label="Chat WhatsApp HappyClean"
       >
         <span className="absolute inset-0 animate-pulse rounded-full bg-[#25d366]/40" />

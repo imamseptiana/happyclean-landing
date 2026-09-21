@@ -1,46 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Bug, Cloud, HeartPulse, Layers, Sofa, Wind } from "lucide-react";
 
-const problems = [
-  {
-    title: "Bau Apek",
-    description:
-      "Sofa dan kasur berbau tidak sedap setelah lama dipakai tanpa pembersihan mendalam.",
-    icon: Wind,
-  },
-  {
-    title: "Banyak Debu",
-    description:
-      "Debu menumpuk di serat kain, mengurangi kenyamanan dan membuat ruangan terasa berat.",
-    icon: Cloud,
-  },
-  {
-    title: "Banyak Tungau",
-    description:
-      "Tungau tersembunyi merusak kesehatan dan menyebabkan iritasi kulit serta pernapasan.",
-    icon: Bug,
-  },
-  {
-    title: "Menimbulkan Alergi",
-    description:
-      "Alergen dalam kasur dan sofa bisa memicu bersin, ruam, serta gangguan tidur.",
-    icon: HeartPulse,
-  },
-  {
-    title: "Kusam dan Kotor",
-    description:
-      "Serat kain kehilangan kilapnya karena noda, keringat, dan residu sehari-hari.",
-    icon: Layers,
-  },
-  {
-    title: "Tidak Nyaman Digunakan",
-    description:
-      "Permukaan sofa atau kasur yang kotor membuat istirahat dan bersantai jadi kurang menyenangkan.",
-    icon: Sofa,
-  },
-];
+import { iconMap, problemItems } from "@/constants";
 
 export function ProblemCustomerSection() {
   return (
@@ -60,8 +22,8 @@ export function ProblemCustomerSection() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {problems.map((problem, index) => {
-            const Icon = problem.icon;
+          {problemItems.map((problem, index) => {
+            const Icon = iconMap[problem.iconKey];
             return (
               <motion.article
                 key={problem.title}

@@ -1,32 +1,4 @@
-import {
-  Home,
-  ShieldCheck,
-  Sparkles,
-  MapPin,
-} from "lucide-react";
-
-const trustItems = [
-  {
-    label: "700+ Sofa & Kasur Telah Kami Bersihkan",
-    description: "Pengalaman tanggap dengan hasil bersih profesional setiap hari.",
-    icon: Sparkles,
-  },
-  {
-    label: "Teknisi Profesional",
-    description: "Tim terlatih dengan mengutamakan kepuasan customer serta pelayanan yang berkualitas.",
-    icon: ShieldCheck,
-  },
-  {
-    label: "Home Service",
-    description: "Layanan datang ke rumah untuk kenyamanan tanpa repot.",
-    icon: Home,
-  },
-  {
-    label: "Area Bogor & Depok",
-    description: "Jangkauan layanan khusus untuk pelanggan lokal yang butuh cepat.",
-    icon: MapPin,
-  },
-];
+import { iconMap, trustItems } from "@/constants";
 
 export function TrustBadgeSection() {
   return (
@@ -40,13 +12,14 @@ export function TrustBadgeSection() {
             Kenapa pelanggan memilih HappyClean
           </h2>
           <p className="mt-4 text-base leading-8 text-slate-600 sm:text-lg">
-            Layanan premium dengan tim handal, layanan rumah, dan jangkauan Bogor serta Depok.
+            Layanan premium dengan tim handal, layanan rumah, dan jangkauan
+            Bogor serta Depok.
           </p>
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {trustItems.map((item) => {
-            const Icon = item.icon;
+            const Icon = iconMap[item.iconKey];
             return (
               <article
                 key={item.label}

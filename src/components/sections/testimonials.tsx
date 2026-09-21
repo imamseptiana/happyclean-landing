@@ -1,40 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import { Star } from "lucide-react";
+import { useState } from "react";
 
-const testimonials = [
-  {
-    quote:
-      "Tim HappyClean menjadikan rumah kami bersih tanpa ribet. Pelayanan cepat, rapi, dan hasilnya sangat memuaskan.",
-    name: "Nadia",
-    role: "Ibu Rumah Tangga",
-    location: "Depok",
-    rating: 5,
-    initials: "N",
-    avatarGradient: "from-sky-500 via-cyan-500 to-emerald-400",
-  },
-  {
-    quote:
-      "Kantor kami jadi segar kembali sebelum meeting besar. Tim profesional dan detail dalam membersihkan setiap sudut.",
-    name: "Rizal",
-    role: "Manajer Operasional",
-    location: "Bogor",
-    rating: 5,
-    initials: "R",
-    avatarGradient: "from-violet-500 via-fuchsia-500 to-pink-500",
-  },
-  {
-    quote:
-      "Booking mudah, staf tepat waktu, dan hasil akhir memuaskan. Saya jadi lebih tenang meninggalkan rumah untuk bekerja.",
-    name: "Maya",
-    role: "Freelancer",
-    location: "Depok",
-    rating: 5,
-    initials: "M",
-    avatarGradient: "from-emerald-500 via-lime-500 to-sky-500",
-  },
-];
+import { testimonials } from "@/constants";
 
 export function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -50,12 +19,19 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="container mx-auto px-6 py-16 sm:py-24" id="testimoni">
+    <section
+      className="container mx-auto px-6 py-16 sm:py-24"
+      id="testimoni"
+      aria-labelledby="testimonials-title"
+    >
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm uppercase tracking-[0.32em] text-sky-500">
           Testimoni
         </p>
-        <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
+        <h2
+          id="testimonials-title"
+          className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl"
+        >
           Suara pelanggan HappyClean
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600 sm:text-lg">
@@ -64,19 +40,27 @@ export function TestimonialsSection() {
         </p>
       </div>
 
-      <div className="relative mt-12 overflow-hidden rounded-[2.5rem] border border-slate-200/80 bg-white/90 px-4 py-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-6 sm:py-12">
+      <div
+        className="relative mt-12 overflow-hidden rounded-[2.5rem] border border-slate-200/80 bg-white/90 px-4 py-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-6 sm:py-12"
+        role="region"
+        aria-roledescription="carousel"
+        aria-label="Testimoni pelanggan HappyClean"
+        aria-live="polite"
+      >
         <div className="absolute left-4 top-1/2 flex -translate-y-1/2 gap-2 sm:left-6">
           <button
             type="button"
             onClick={previous}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
+            aria-label="Lihat testimoni sebelumnya"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
           >
             ‹
           </button>
           <button
             type="button"
             onClick={next}
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900"
+            aria-label="Lihat testimoni berikutnya"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
           >
             ›
           </button>
@@ -123,13 +107,18 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center gap-2">
+        <div
+          className="mt-8 flex justify-center gap-2"
+          aria-label="Navigasi slide testimoni"
+        >
           {testimonials.map((_, index) => (
             <button
               key={index}
               type="button"
               onClick={() => setActiveIndex(index)}
-              className={`h-3 w-3 rounded-full transition ${
+              aria-label={`Pilih testimoni ${index + 1}`}
+              aria-current={index === activeIndex}
+              className={`h-3 w-3 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 ${
                 index === activeIndex ? "bg-sky-500" : "bg-slate-300"
               }`}
             />

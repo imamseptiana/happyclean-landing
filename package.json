@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --max-warnings=0"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.14",
@@ -22,7 +22,7 @@
     "@types/node": "^20.14.2",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
-    "eslint": "^9.0.0",
+    "eslint": "^8.57.0",
     "eslint-config-next": "^15.2.1",
     "postcss": "^8.5.15",
     "tailwindcss": "^4.3.1",

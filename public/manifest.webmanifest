@@ -1,0 +1,18 @@
+{
+  "name": "HappyClean",
+  "short_name": "HappyClean",
+  "description": "Jasa cuci sofa, kasur, springbed, dan vakum tungau di Bogor, Depok, dan Jabodetabek.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

@@ -6,10 +6,10 @@ export function FeatureGrid() {
           Layanan
         </p>
         <h2 className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl">
-          Layanan kebersihan terbaik untuk hunian dan ruang kerja Anda
+          Layanan kebersihan terbaik untuk soft furniture hunian dan ruang kerja Anda
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600 sm:text-lg">
-          Pilih paket pembersihan yang sesuai, mulai dari layanan rutin hingga
+          Pilih jenis layanan pembersihan yang tersedia, mulai dari vakum tungau hingga
           deep clean lengkap dengan standar profesional.
         </p>
       </div>

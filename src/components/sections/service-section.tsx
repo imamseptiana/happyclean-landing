@@ -1,60 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  BedDouble,
-  Baby,
-  Car,
-  Feather,
-  Frame,
-  Layers,
-  Sofa,
-} from "lucide-react";
 
-const services = [
-  {
-    title: "Cuci Sofa",
-    description:
-      "Membersihkan sofa sampai ke serat dengan teknik profesional dan bahan aman.",
-    icon: Sofa,
-  },
-  {
-    title: "Cuci Kasur",
-    description:
-      "Perawatan mendalam untuk kasur agar bebas debu, jamur, dan tungau.",
-    icon: BedDouble,
-  },
-  {
-    title: "Cuci Bantal",
-    description:
-      "Bantal kembali segar dan harum tanpa meninggalkan residu kimia berbahaya.",
-    icon: Feather,
-  },
-  {
-    title: "Cuci Jok Mobil",
-    description:
-      "Pembersihan jok mobil yang rapi untuk pengalaman berkendara lebih nyaman.",
-    icon: Car,
-  },
-  {
-    title: "Cuci Karpet",
-    description:
-      "Karpet bersih dari noda, debu, dan alergen untuk interior rumah yang lebih sehat.",
-    icon: Layers,
-  },
-  {
-    title: "Cuci Gorden",
-    description:
-      "Gorden yang kembali lembut, wangi, dan bebas debu untuk tampilan rumah yang segar.",
-    icon: Frame,
-  },
-  {
-    title: "Cuci Baby Care",
-    description:
-      "Perawatan aman untuk perlengkapan bayi yang menjaga kelembutan serta kebersihan.",
-    icon: Baby,
-  },
-];
+import { iconMap, serviceItems } from "@/constants";
 
 export function ServiceSection() {
   return (
@@ -74,8 +22,8 @@ export function ServiceSection() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+          {serviceItems.map((service, index) => {
+            const Icon = iconMap[service.iconKey];
             return (
               <motion.article
                 key={service.title}

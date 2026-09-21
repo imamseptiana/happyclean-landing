@@ -2,8 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+
+import { heroGalleryImages } from "@/constants";
+import { trackCtaClick, trackWhatsAppClick } from "@/lib/analytics";
 
 export function HeroSection() {
+  const [activeImage, setActiveImage] = useState(0);
   return (
     <section
       className="relative overflow-hidden bg-gradient-to-b from-sky-200 via-sky-100 to-white pb-16 pt-14 sm:pb-24 sm:pt-20"
@@ -43,13 +49,17 @@ export function HeroSection() {
                 href="https://wa.me/6285169569089?text=Halo%20HappyClean%2C%20saya%20ingin%20booking%20layanan%20cuci%20sofa%20dan%20kasur"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+                onClick={() =>
+                  trackWhatsAppClick("hero_primary", "Booking via WhatsApp")
+                }
+                className="inline-flex items-center justify-center rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 focus-visible:ring-offset-2"
               >
                 Booking via WhatsApp
               </a>
               <a
                 href="#layanan"
-                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+                onClick={() => trackCtaClick("Lihat Layanan", "hero_secondary")}
+                className="inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-900 focus-visible:ring-offset-2"
               >
                 Lihat Layanan
               </a>
@@ -118,13 +128,48 @@ export function HeroSection() {
                 </div>
 
                 <div className="mt-6 rounded-[2rem] border border-dashed border-slate-300 bg-gradient-to-br from-slate-100 via-slate-50 to-white p-6">
-                  <div className="flex h-72 items-center justify-center rounded-[1.5rem] border border-slate-200 bg-gradient-to-br from-blue-100 via-white to-slate-100 text-center text-slate-500">
-                    <div>
-                      <p className="text-lg font-semibold">Ilustrasi Teknisi</p>
-                      <p className="mt-2 text-sm text-slate-500">
-                        Placeholder modern
-                      </p>
+                  <div className="space-y-4">
+                    <div className="overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white">
+                      <Image
+                        src={heroGalleryImages[activeImage].src}
+                        alt={heroGalleryImages[activeImage].alt}
+                        width={720}
+                        height={450}
+                        className="h-72 w-full object-cover sm:h-80"
+                      />
                     </div>
+
+                    <div
+                      className="flex flex-wrap gap-2"
+                      aria-label="Galeri foto hasil kerja HappyClean"
+                    >
+                      {heroGalleryImages.map((image, index) => (
+                        <button
+                          key={image.src}
+                          type="button"
+                          onClick={() => setActiveImage(index)}
+                          aria-label={`Tampilkan foto ${index + 1} dari ${heroGalleryImages.length}`}
+                          aria-pressed={index === activeImage}
+                          className={`relative h-14 w-14 overflow-hidden rounded-xl border transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 ${
+                            index === activeImage
+                              ? "border-blue-600 ring-2 ring-blue-100"
+                              : "border-slate-200"
+                          }`}
+                        >
+                          <Image
+                            src={image.src}
+                            alt=""
+                            width={80}
+                            height={80}
+                            className="h-full w-full object-cover"
+                          />
+                        </button>
+                      ))}
+                    </div>
+
+                    <p className="text-sm text-slate-600">
+                      Foto real proses pengerjaan dari tim HappyClean.
+                    </p>
                   </div>
                 </div>
 

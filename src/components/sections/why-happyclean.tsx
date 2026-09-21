@@ -1,45 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, Bug, Droplet, Home, ShieldCheck, Tag, Users } from "lucide-react";
 
-const reasons = [
-  {
-    title: "Anti Tungau",
-    description: "Teknologi pembersihan khusus untuk membasmi tungau dan menjaga udara tetap segar.",
-    icon: Bug,
-  },
-  {
-    title: "Deep Cleaning",
-    description: "Perawatan mendalam sampai ke serat, noda, dan partikel tersembunyi.",
-    icon: Droplet,
-  },
-  {
-    title: "Aman Untuk Anak",
-    description: "Bahan ramah keluarga yang aman untuk bayi dan anak-anak.",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Home Service",
-    description: "Layanan datang ke lokasi untuk kenyamanan tanpa repot.",
-    icon: Home,
-  },
-  {
-    title: "Teknisi Profesional",
-    description: "Tim terlatih dengan pengalaman dan standar servis tinggi.",
-    icon: Users,
-  },
-  {
-    title: "Harga Murah",
-    description: "Pilihan paket terjangkau tanpa mengorbankan kualitas dan hasil.",
-    icon: Tag,
-  },
-  {
-    title: "Bergaransi",
-    description: "Layanan dengan jaminan kepuasan untuk hasil yang konsisten.",
-    icon: Award,
-  },
-];
+import { iconMap, reasonItems } from "@/constants";
 
 export function WhyHappyCleanSection() {
   return (
@@ -53,13 +16,14 @@ export function WhyHappyCleanSection() {
             Keunggulan Layanan Kami yang Bikin Bersih Jadi Tenang
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-            Solusi kebersihan premium dengan layanan rumah, dukungan teknisi ahli, dan hasil yang aman bagi keluarga.
+            Solusi kebersihan premium dengan layanan rumah, dukungan teknisi
+            ahli, dan hasil yang aman bagi keluarga.
           </p>
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {reasons.map((item, index) => {
-            const Icon = item.icon;
+          {reasonItems.map((item, index) => {
+            const Icon = iconMap[item.iconKey];
             return (
               <motion.article
                 key={item.title}
