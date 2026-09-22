@@ -108,7 +108,7 @@ export function ContactSection() {
 
           <button
             type="submit"
-            className="inline-flex w-full items-center justify-center rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600 focus-visible:ring-offset-2"
+            className="inline-flex w-full items-center justify-center rounded-full bg-[#0a58d8] px-6 py-3.5 text-sm font-bold text-white shadow-[0_18px_42px_-20px_rgba(10,88,216,0.9)] transition duration-200 hover:bg-[#0b4fc8] hover:shadow-[0_20px_46px_-18px_rgba(10,88,216,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0a58d8] focus-visible:ring-offset-2"
           >
             {submitted ? "Permintaan terkirim" : "Kirim permintaan"}
           </button>
