@@ -8,7 +8,7 @@ import { faqItems } from "@/constants";
 
 export function FaqSection() {
   return (
-    <section className="container mx-auto px-6 py-16 sm:py-24" id="faq">
+    <section className="bg-[#edf6ff] px-6 py-16 sm:py-24" id="faq">
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-sm uppercase tracking-[0.32em] text-brand-600">
           FAQ
@@ -22,7 +22,7 @@ export function FaqSection() {
         </p>
       </div>
 
-      <div className="mt-12 rounded-[2rem] border border-slate-200/80 bg-gradient-to-b from-white via-slate-50 to-white p-3 shadow-[0_24px_80px_rgba(15,23,42,0.06)] sm:p-5">
+      <div className="mt-12 rounded-[2.2rem] border border-blue-600 bg-[#a9caf7] p-4 shadow-[0_34px_120px_-44px_rgba(19,52,128,0.88)] sm:p-5">
         <Accordion type="single" collapsible className="w-full space-y-3">
           {faqItems.map((item) => (
             <AccordionItem key={item.question} value={item.question}>

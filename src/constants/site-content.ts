@@ -121,6 +121,12 @@ export const serviceItems: ServiceItem[] = [
     iconKey: "bed",
   },
   {
+    title: "Daily Cleaning",
+    description:
+      "Layanan kebersihan harian untuk rumah, kantor, dan apartemen agar tetap rapi, sehat, dan siap pakai.",
+    iconKey: "sparkles",
+  },
+  {
     title: "Cuci Bantal",
     description:
       "Bantal kembali segar dan harum tanpa meninggalkan residu kimia berbahaya.",
@@ -219,14 +225,14 @@ export const faqItems: FaqItem[] = [
       "Tentu. Kami menggunakan produk yang aman untuk keluarga dan tetap memperhatikan area yang digunakan anak.",
   },
   {
-    question: "Apakah melayani panggilan ke rumah?",
+    question: "Apakah melayani panggilan ke rumah, kantor, atau apartemen?",
     answer:
-      "Ya, kami melayani panggilan ke rumah sesuai jadwal dan ketersediaan tim.",
+      "Ya, kami melayani panggilan ke rumah, kantor, dan apartemen sesuai jadwal dan ketersediaan tim.",
   },
   {
-    question: "Apakah bisa pesan jika di luar area Bogor & Depok?",
+    question: "Apakah bisa pesan di area Jabodetabek?",
     answer:
-      "Bisa, namun kami menyesuaikan dengan ketersediaan staff lapangan di area tersebut.",
+      "Bisa. Kami melayani pelanggan di Jabodetabek dengan penyesuaian jadwal dan wilayah layanan yang tersedia.",
   },
 ];
 
@@ -249,9 +255,9 @@ export const trustItems: TrustItem[] = [
     iconKey: "home",
   },
   {
-    label: "Area Bogor & Depok",
+    label: "Area Jabodetabek",
     description:
-      "Jangkauan layanan khusus untuk pelanggan lokal yang butuh cepat.",
+      "Jangkauan layanan yang luas untuk rumah, kantor, dan apartemen di sekitar Jabodetabek.",
     iconKey: "map",
   },
 ];
@@ -339,32 +345,30 @@ export const problemItems: ProblemItem[] = [
 export const testimonials: TestimonialItem[] = [
   {
     quote:
-      "Tim HappyClean menjadikan rumah kami bersih tanpa ribet. Pelayanan cepat, rapi, dan hasilnya sangat memuaskan.",
-    name: "Nadia",
-    role: "Ibu Rumah Tangga",
-    location: "Depok",
+      "Admnya fast respon, pegawainya juga datang tepat waktu dengan pengerjaanya yg cepat dan cekatan. Hasilnya sangat memuaskan, sesuai yg diharapkan. Dijaga selalu kualitasnya.",
+    name: "Riki Permana",
+    role: "Google Maps Review",
+    location: "Bogor",
     rating: 5,
-    initials: "N",
+    initials: "RP",
     avatarGradient: "from-sky-500 via-cyan-500 to-emerald-400",
   },
   {
-    quote:
-      "Kantor kami jadi segar kembali sebelum meeting besar. Tim profesional dan detail dalam membersihkan setiap sudut.",
-    name: "Rizal",
-    role: "Manajer Operasional",
+    quote: "Pelayanan ramah, hasil bagus.",
+    name: "Google Review",
+    role: "Pelanggan",
     location: "Bogor",
     rating: 5,
-    initials: "R",
+    initials: "GR",
     avatarGradient: "from-violet-500 via-fuchsia-500 to-pink-500",
   },
   {
-    quote:
-      "Booking mudah, staf tepat waktu, dan hasil akhir memuaskan. Saya jadi lebih tenang meninggalkan rumah untuk bekerja.",
-    name: "Maya",
-    role: "Freelancer",
+    quote: "Recommended hasilnya bersih respon admin jga fast respon.",
+    name: "Pelanggan",
+    role: "Google Maps Review",
     location: "Depok",
     rating: 5,
-    initials: "M",
+    initials: "PM",
     avatarGradient: "from-emerald-500 via-lime-500 to-sky-500",
   },
 ];

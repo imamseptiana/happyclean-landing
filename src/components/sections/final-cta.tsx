@@ -1,7 +1,12 @@
 "use client";
 
+import { Instagram, Youtube } from "lucide-react";
+
 const waLink =
   "https://wa.me/6285169569089?text=Halo%20HappyClean%2C%20saya%20ingin%20booking";
+const igLink =
+  "https://www.instagram.com/happycle4n?stkn=YzFsbm1lbTh2Ym1q&utm_source=qr";
+const ytLink = "https://youtube.com/@happycleanhomeservice?si=KCr_JHbbizzOxd7P";
 
 import { trackCtaClick, trackWhatsAppClick } from "@/lib/analytics";
 
@@ -19,11 +24,12 @@ export function FinalCtaSection() {
                 Siap booking layanan?
               </p>
               <h2 className="mt-4 text-3xl font-semibold sm:text-4xl">
-                Rumah bersih dalam satu klik lewat WhatsApp.
+                Rumah, kantor, dan apartemen bersih dalam satu klik lewat
+                WhatsApp.
               </h2>
               <p className="mt-4 max-w-2xl text-slate-100/90 sm:text-lg">
                 Booking sekarang untuk jadwal cepat, tenaga profesional, dan
-                hasil rapi tanpa repot.
+                hasil rapi tanpa repot di area Jabodetabek.
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <a
@@ -54,6 +60,27 @@ export function FinalCtaSection() {
                   className="inline-flex items-center justify-center rounded-full border border-white/30 bg-white/10 px-6 py-3 text-base font-semibold text-white transition hover:border-white hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-600"
                 >
                   Lihat Layanan
+                </a>
+              </div>
+
+              <div className="mt-6 flex items-center gap-2.5">
+                <a
+                  href={igLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Instagram HappyClean"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white shadow-sm shadow-slate-950/10 transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-600"
+                >
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a
+                  href={ytLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="YouTube HappyClean"
+                  className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 bg-white/10 text-white shadow-sm shadow-slate-950/10 transition hover:-translate-y-0.5 hover:bg-white/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-sky-600"
+                >
+                  <Youtube className="h-4 w-4" />
                 </a>
               </div>
             </div>

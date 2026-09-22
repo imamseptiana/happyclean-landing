@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import { trackFormSubmit } from "@/lib/analytics";
+import { siteConfig } from "@/lib/site-config";
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false);
@@ -10,9 +11,9 @@ export function ContactSection() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const formData = new FormData(event.currentTarget);
-    const name = (formData.get("name") as string) || "unknown";
-    const service = (formData.get("service") as string) || "unknown";
-    const phone = (formData.get("phone") as string) || "unknown";
+    const name = (formData.get("name") as string)?.trim() || "unknown";
+    const service = (formData.get("service") as string)?.trim() || "unknown";
+    const phone = (formData.get("phone") as string)?.trim() || "unknown";
 
     trackFormSubmit("contact_form", "submit", {
       form_name: "contact_form",
@@ -21,6 +22,10 @@ export function ContactSection() {
       phone_number: phone,
     });
 
+    const message = `Halo HappyClean, saya ${name}. Saya ingin layanan ${service}. Nomor WhatsApp: ${phone}. Mohon bantuannya.`;
+    const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
     trackFormSubmit("contact_form", "success", {
       form_name: "contact_form",
@@ -31,8 +36,8 @@ export function ContactSection() {
   };
 
   return (
-    <section className="container mx-auto px-6 py-16 sm:py-24" id="contact">
-      <div className="grid gap-10 rounded-[2rem] border border-slate-200 bg-white p-8 shadow-sm shadow-slate-900/5 lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
+    <section className="bg-[#edf6ff] px-6 py-16 sm:py-24" id="contact">
+      <div className="grid gap-10 rounded-[2.35rem] border border-blue-600 bg-[#a9caf7] p-8 shadow-[0_40px_140px_-42px_rgba(19,52,128,0.9)] lg:grid-cols-[1.1fr_0.9fr] lg:p-12">
         <div>
           <p className="text-sm uppercase tracking-[0.32em] text-brand-600">
             Konsultasi

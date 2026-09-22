@@ -12,7 +12,7 @@ export function HeroSection() {
   const [activeImage, setActiveImage] = useState(0);
   return (
     <section
-      className="relative overflow-hidden bg-gradient-to-b from-sky-200 via-sky-100 to-white pb-16 pt-14 sm:pb-24 sm:pt-20"
+      className="relative overflow-hidden bg-[linear-gradient(180deg,#dfeefb_0%,#edf6ff_42%,#f8fbff_100%)] pb-16 pt-14 sm:pb-24 sm:pt-20"
       id="home"
     >
       <div className="absolute inset-x-0 top-0 h-80 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.22),transparent_38%)]" />
@@ -25,10 +25,15 @@ export function HeroSection() {
             className="space-y-8"
           >
             <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm shadow-slate-900/5 backdrop-blur">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-blue-600 text-white">
-                HC
-              </span>
-              <span>Premium Sofa & Kasur Cleaning</span>
+              <div className="relative h-9 w-9 overflow-hidden rounded-full border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+                <Image
+                  src="/logo happyclean.jpeg"
+                  alt="HappyClean logo"
+                  fill
+                  className="scale-[1.16] object-cover object-center"
+                />
+              </div>
+              <span>Premium Sofa, Kasur & Interior Cleaning</span>
             </div>
 
             <div className="space-y-5">
@@ -36,11 +41,12 @@ export function HeroSection() {
                 HappyClean
               </p>
               <h1 className="text-3xl font-semibold leading-tight text-slate-950 sm:text-5xl">
-                Jasa Cuci Sofa & Kasur Profesional Anti Tungau di Bogor & Depok
+                HappyClean datang, ruang Anda kembali nyaman.
               </h1>
               <p className="max-w-2xl text-base leading-8 text-slate-600 sm:text-lg">
-                Hilangkan bau, debu, noda, dan alergen dengan metode deep
-                cleaning profesional.
+                Profesional untuk rumah, kantor, dan apartemen—siap membersihkan
+                sofa, kasur, karpet, dan area interior dengan teknologi deep
+                cleaning yang aman, rapi, dan cepat.
               </p>
             </div>
 
@@ -79,7 +85,7 @@ export function HeroSection() {
                   ))}
                 </div>
                 <p className="mt-2 text-sm text-slate-600">
-                  10.000+ pelanggan puas di Bogor & Depok
+                  10.000+ pelanggan puas di area Jabodetabek
                 </p>
               </div>
 

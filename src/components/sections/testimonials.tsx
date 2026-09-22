@@ -1,6 +1,6 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { MapPin, Star } from "lucide-react";
 import { useState } from "react";
 
 import { testimonials } from "@/constants";
@@ -20,7 +20,7 @@ export function TestimonialsSection() {
 
   return (
     <section
-      className="container mx-auto px-6 py-16 sm:py-24"
+      className="bg-[#edf6ff] px-6 py-16 sm:py-24"
       id="testimoni"
       aria-labelledby="testimonials-title"
     >
@@ -32,40 +32,21 @@ export function TestimonialsSection() {
           id="testimonials-title"
           className="mt-4 text-3xl font-semibold text-slate-950 sm:text-4xl"
         >
-          Suara pelanggan HappyClean
+          Ulasan real dari Google Maps
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-slate-600 sm:text-lg">
           Cerita nyata dari pelanggan yang sudah merasakan layanan bersih-rapi
-          dan nyaman dari tim kami.
+          dan nyaman dari tim kami di Google Maps.
         </p>
       </div>
 
       <div
-        className="relative mt-12 overflow-hidden rounded-[2.5rem] border border-slate-200/80 bg-white/90 px-4 py-8 shadow-[0_24px_80px_rgba(15,23,42,0.08)] sm:px-6 sm:py-12"
+        className="relative mt-12 overflow-hidden rounded-[2.35rem] border border-blue-600 bg-[#a7c8f5] px-4 py-8 shadow-[0_38px_140px_-46px_rgba(19,52,128,0.9)] sm:px-6 sm:py-10"
         role="region"
         aria-roledescription="carousel"
         aria-label="Testimoni pelanggan HappyClean"
         aria-live="polite"
       >
-        <div className="absolute left-4 top-1/2 flex -translate-y-1/2 gap-2 sm:left-6">
-          <button
-            type="button"
-            onClick={previous}
-            aria-label="Lihat testimoni sebelumnya"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-          >
-            ‹
-          </button>
-          <button
-            type="button"
-            onClick={next}
-            aria-label="Lihat testimoni berikutnya"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 shadow-sm transition hover:border-slate-300 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-          >
-            ›
-          </button>
-        </div>
-
         <div className="relative overflow-hidden">
           <div
             className="flex transition-transform duration-500 ease-out"
@@ -74,31 +55,46 @@ export function TestimonialsSection() {
             {testimonials.map((item) => (
               <article
                 key={`${item.name}-${item.location}`}
-                className="min-w-full shrink-0 px-2 sm:px-4"
+                className="min-w-full shrink-0 px-1.5 sm:px-2.5"
               >
-                <div className="h-full rounded-[2rem] border border-slate-200 bg-slate-950/95 p-8 text-white shadow-xl shadow-slate-950/20 sm:p-10">
-                  <div className="flex items-center gap-2 text-amber-300">
-                    {Array.from({ length: item.rating }).map((_, index) => (
-                      <Star key={index} className="h-5 w-5" />
-                    ))}
+                <div className="mx-auto max-w-2xl rounded-[1.75rem] border border-slate-200 bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.06)] sm:p-7">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-2 text-amber-400">
+                      {Array.from({ length: item.rating }).map((_, index) => (
+                        <Star key={index} className="h-4 w-4 sm:h-5 sm:w-5" />
+                      ))}
+                    </div>
+                    <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-emerald-700 sm:text-[11px]">
+                      5.0
+                    </span>
                   </div>
-                  <p className="mt-6 text-lg leading-8 text-slate-100 sm:text-xl">
+
+                  <p className="mt-5 text-base leading-7 text-slate-700 sm:text-lg sm:leading-8">
                     “{item.quote}”
                   </p>
-                  <div className="mt-8 rounded-3xl border border-slate-800 bg-slate-900/95 p-5">
-                    <div className="flex items-center gap-4">
+
+                  <div className="mt-6 flex items-center justify-between gap-3 border-t border-slate-100 pt-4">
+                    <div className="flex items-center gap-3">
                       <div
-                        className={`flex h-14 w-14 items-center justify-center rounded-3xl bg-gradient-to-br ${item.avatarGradient} text-lg font-semibold text-white shadow-lg shadow-slate-950/20`}
+                        className={`flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br ${item.avatarGradient} text-sm font-semibold text-white shadow-sm sm:h-12 sm:w-12`}
                       >
                         {item.initials}
                       </div>
-                      <div className="space-y-1">
-                        <p className="font-semibold text-white">{item.name}</p>
-                        <p className="text-sm text-slate-400">{item.role}</p>
-                        <p className="text-sm text-slate-500">
-                          {item.location}
+                      <div>
+                        <p className="text-sm font-semibold text-slate-900 sm:text-base">
+                          {item.name}
+                        </p>
+                        <p className="text-xs text-slate-500 sm:text-sm">
+                          {item.role}
                         </p>
                       </div>
+                    </div>
+
+                    <div className="flex items-center gap-1 text-slate-500">
+                      <MapPin className="h-4 w-4" />
+                      <span className="text-xs sm:text-sm">
+                        {item.location}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -107,22 +103,42 @@ export function TestimonialsSection() {
           </div>
         </div>
 
-        <div
-          className="mt-8 flex justify-center gap-2"
-          aria-label="Navigasi slide testimoni"
-        >
-          {testimonials.map((_, index) => (
+        <div className="mt-8 flex justify-center">
+          <div
+            className="flex items-center justify-center gap-3 rounded-full border border-slate-200 bg-white/90 px-4 py-2 shadow-sm shadow-slate-900/5"
+            aria-label="Navigasi slide testimoni"
+          >
             <button
-              key={index}
               type="button"
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Pilih testimoni ${index + 1}`}
-              aria-current={index === activeIndex}
-              className={`h-3 w-3 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 ${
-                index === activeIndex ? "bg-sky-500" : "bg-slate-300"
-              }`}
-            />
-          ))}
+              onClick={previous}
+              aria-label="Ulasan sebelumnya"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-base font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+            >
+              ‹
+            </button>
+
+            {testimonials.map((_, index) => (
+              <button
+                key={index}
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Pilih testimoni ${index + 1}`}
+                aria-current={index === activeIndex}
+                className={`h-2.5 w-2.5 rounded-full transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 ${
+                  index === activeIndex ? "bg-sky-500" : "bg-slate-300"
+                }`}
+              />
+            ))}
+
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Ulasan berikutnya"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 bg-white text-base font-semibold text-slate-700 transition hover:border-slate-300 hover:text-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+            >
+              ›
+            </button>
+          </div>
         </div>
 
         <div className="mt-8 grid gap-4 sm:grid-cols-3">
@@ -138,6 +154,18 @@ export function TestimonialsSection() {
             <p className="text-3xl font-semibold text-slate-950">100%</p>
             <p className="mt-2 text-sm">Testimoni asli</p>
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://maps.app.goo.gl/qTKdV6ZfWDxLmsQSA?g_st=iw"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full bg-sky-500 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:bg-sky-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
+          >
+            <MapPin className="h-4 w-4" />
+            Lihat review di Google Maps
+          </a>
         </div>
       </div>
     </section>

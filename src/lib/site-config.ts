@@ -4,19 +4,19 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://happyclean.id";
 
 export const siteConfig: SiteConfig = {
   name: "HappyClean",
-  title: "Jasa Cuci Sofa Bogor & Depok | HappyClean",
+  title: "Jasa Cuci Sofa, Kasur & Interior Jabodetabek | HappyClean",
   description:
-    "HappyClean adalah jasa cuci sofa, kasur, springbed, dan vakum tungau di Bogor, Depok, serta Jabodetabek dengan layanan rumah profesional dan hasil bersih maksimal.",
+    "HappyClean adalah jasa cuci sofa, kasur, springbed, dan perawatan interior rumah, kantor, serta apartemen di Jabodetabek dengan layanan profesional dan hasil bersih maksimal.",
   url: siteUrl,
   ogImage: "/og-image.svg",
   keywords: [
-    "Jasa Cuci Sofa Bogor",
-    "Jasa Cuci Sofa Depok",
-    "Jasa Cuci Springbed Bogor",
-    "Jasa Cuci Springbed",
     "Jasa Cuci Sofa Jabodetabek",
     "Jasa Cuci Kasur Jabodetabek",
-    "Vakum Tungau Bogor",
+    "Jasa Cuci Sofa Rumah",
+    "Jasa Cuci Sofa Kantor",
+    "Jasa Cuci Sofa Apartemen",
+    "Jasa Cuci Interior Kantor",
+    "Vakum Tungau Jabodetabek",
     "HappyClean",
   ],
   phone: "+62 851-6956-9089",
@@ -31,6 +31,6 @@ export const siteConfig: SiteConfig = {
   },
   areaServed: ["Bogor", "Depok", "Jabodetabek"],
   businessType: "CleaningService",
-  logo: "/icon.svg",
+  logo: "/logo happyclean.jpeg",
   themeColor: "#0ea5e9",
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu, MessageCircle, X } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -17,8 +18,14 @@ export function Navbar() {
           href="#home"
           className="flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
         >
-          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-50 text-brand-600 shadow-sm shadow-brand-200/50">
-            <span className="text-base font-semibold">HC</span>
+          <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+            <Image
+              src="/logo happyclean.jpeg"
+              alt="HappyClean logo"
+              width={48}
+              height={48}
+              className="h-full w-full scale-[1.12] object-cover object-center"
+            />
           </div>
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-slate-950">
@@ -52,7 +59,7 @@ export function Navbar() {
             href="https://wa.me/6285169569089?text=Halo%20HappyClean%20saya%20ingin%20tahu%20lebih%20lanjut"
             target="_blank"
             rel="noreferrer"
-            aria-label="Chat WhatsApp HappyClean"
+            aria-label="Chat WhatsApp admin HappyClean"
             onClick={() => trackWhatsAppClick("navbar_desktop", "WhatsApp")}
             className="inline-flex items-center gap-2 rounded-full bg-whatsapp px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-whatsapp-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
@@ -97,7 +104,7 @@ export function Navbar() {
             href="https://wa.me/6285169569089?text=Halo%20HappyClean%20saya%20ingin%20tahu%20lebih%20lanjut"
             target="_blank"
             rel="noreferrer"
-            aria-label="Chat WhatsApp HappyClean"
+            aria-label="Chat WhatsApp admin HappyClean"
             onClick={() => trackWhatsAppClick("navbar_mobile", "WhatsApp")}
             className="flex items-center justify-center rounded-full bg-whatsapp px-4 py-3 text-sm font-semibold text-white transition hover:bg-whatsapp-dark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
           >
