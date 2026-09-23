@@ -25,12 +25,12 @@ export function HeroSection() {
             className="space-y-8"
           >
             <div className="inline-flex items-center gap-3 rounded-full border border-slate-200 bg-white/80 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm shadow-slate-900/5 backdrop-blur">
-              <div className="relative h-9 w-9 overflow-hidden rounded-full border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+              <div className="relative h-9 w-9 overflow-hidden rounded-[0.75rem] border border-slate-200 bg-white shadow-[0_10px_24px_-14px_rgba(15,23,42,0.2)] ring-1 ring-slate-100">
                 <Image
-                  src="/logo happyclean.jpeg"
+                  src="/logo%20baru.jpeg"
                   alt="HappyClean logo"
                   fill
-                  className="scale-[1.16] object-cover object-center"
+                  className="object-cover"
                 />
               </div>
               <span>Premium Sofa, Kasur & Interior Cleaning</span>

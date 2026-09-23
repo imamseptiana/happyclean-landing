@@ -65,9 +65,9 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
   },
   icons: {
-    icon: [{ url: "/logo happyclean.jpeg", type: "image/jpeg" }],
-    shortcut: ["/logo happyclean.jpeg"],
-    apple: [{ url: "/logo happyclean.jpeg", type: "image/jpeg" }],
+    icon: [{ url: "/logo%20baru.jpeg", type: "image/jpeg" }],
+    shortcut: ["/logo%20baru.jpeg"],
+    apple: [{ url: "/logo%20baru.jpeg", type: "image/jpeg" }],
   },
   manifest: "/manifest.webmanifest",
 };

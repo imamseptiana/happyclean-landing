@@ -18,13 +18,13 @@ export function Navbar() {
           href="#home"
           className="flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
         >
-          <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full border border-slate-200 bg-white shadow-sm shadow-slate-200/60">
+          <div className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-[0.9rem] border border-slate-200 bg-white shadow-[0_10px_30px_-12px_rgba(15,23,42,0.2)] ring-1 ring-slate-100">
             <Image
-              src="/logo happyclean.jpeg"
+              src="/logo%20baru.jpeg"
               alt="HappyClean logo"
               width={48}
               height={48}
-              className="h-full w-full scale-[1.12] object-cover object-center"
+              className="h-full w-full object-cover"
             />
           </div>
           <div>

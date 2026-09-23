@@ -31,6 +31,6 @@ export const siteConfig: SiteConfig = {
   },
   areaServed: ["Bogor", "Depok", "Jabodetabek"],
   businessType: "CleaningService",
-  logo: "/logo happyclean.jpeg",
+  logo: "/logo%20baru.jpeg",
   themeColor: "#0ea5e9",
 };
