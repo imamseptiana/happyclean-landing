@@ -6,6 +6,7 @@ import { useEffect } from "react";
 
 import {
   GA_MEASUREMENT_ID,
+  GOOGLE_ADS_ID,
   GTM_ID,
   IS_ANALYTICS_ENABLED,
   trackScrollDepth,
@@ -87,21 +88,23 @@ export function AnalyticsProvider() {
         </>
       ) : null}
 
-      {GA_MEASUREMENT_ID ? (
+      {GA_MEASUREMENT_ID || GOOGLE_ADS_ID ? (
         <>
           <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID || GOOGLE_ADS_ID}`}
             strategy="afterInteractive"
           />
-          <Script id="ga4-config" strategy="afterInteractive">
+          <Script id="google-tags-config" strategy="afterInteractive">
             {`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${GA_MEASUREMENT_ID}', {
-                send_page_view: true,
-                anonymize_ip: true,
-              });
+              ${
+                GA_MEASUREMENT_ID
+                  ? `gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: true, anonymize_ip: true });`
+                  : ""
+              }
+              ${GOOGLE_ADS_ID ? `gtag('config', '${GOOGLE_ADS_ID}');` : ""}
             `}
           </Script>
         </>

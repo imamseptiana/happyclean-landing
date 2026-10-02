@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 
 import { iconMap, serviceItems } from "@/constants";
+import { trackWhatsAppClick } from "@/lib/analytics";
 import { siteConfig } from "@/lib/site-config";
 
 export function ServiceSection() {
@@ -66,6 +67,9 @@ export function ServiceSection() {
                   href={whatsappLink}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() =>
+                    trackWhatsAppClick("service_card", service.title)
+                  }
                   className="mt-6 inline-flex items-center rounded-full border border-sky-200 bg-sky-50 px-4 py-2.5 text-sm font-semibold text-sky-700 transition hover:border-sky-300 hover:bg-sky-100"
                 >
                   Pesan Sekarang

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { trackFormSubmit } from "@/lib/analytics";
+import { trackFormSubmit, trackWhatsAppClick } from "@/lib/analytics";
 import { siteConfig } from "@/lib/site-config";
 
 export function ContactSection() {
@@ -25,6 +25,7 @@ export function ContactSection() {
     const message = `Halo HappyClean, saya ${name}. Saya ingin layanan ${service}. Nomor WhatsApp: ${phone}. Mohon bantuannya.`;
     const whatsappUrl = `https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(message)}`;
 
+    trackWhatsAppClick("contact_form", "Kirim permintaan");
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     setSubmitted(true);
     trackFormSubmit("contact_form", "success", {

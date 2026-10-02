@@ -13,7 +13,12 @@ declare global {
 export const GA_MEASUREMENT_ID =
   process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "";
 export const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? "";
-export const IS_ANALYTICS_ENABLED = Boolean(GA_MEASUREMENT_ID || GTM_ID);
+export const GOOGLE_ADS_ID = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID ?? "";
+export const GOOGLE_ADS_WHATSAPP_LABEL =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_WHATSAPP_CONVERSION_LABEL ?? "";
+export const IS_ANALYTICS_ENABLED = Boolean(
+  GA_MEASUREMENT_ID || GTM_ID || GOOGLE_ADS_ID,
+);
 
 export function trackEvent(
   eventName: string,
@@ -54,6 +59,17 @@ export function trackWhatsAppClick(location: string, label = "WhatsApp"): void {
     cta_label: label,
     outbound: true,
   });
+
+  if (
+    typeof window !== "undefined" &&
+    typeof window.gtag === "function" &&
+    GOOGLE_ADS_ID &&
+    GOOGLE_ADS_WHATSAPP_LABEL
+  ) {
+    window.gtag("event", "conversion", {
+      send_to: `${GOOGLE_ADS_ID}/${GOOGLE_ADS_WHATSAPP_LABEL}`,
+    });
+  }
 }
 
 export function trackFormSubmit(
