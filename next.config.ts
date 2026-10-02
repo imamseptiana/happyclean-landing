@@ -27,7 +27,8 @@ const nextConfig: NextConfig = {
   },
   env: {
     NEXT_PUBLIC_SITE_URL:
-      process.env.NEXT_PUBLIC_SITE_URL || "https://happyclean.id",
+      process.env.NEXT_PUBLIC_SITE_URL ||
+      "https://happyclean-landing.vercel.app",
   },
 };
 

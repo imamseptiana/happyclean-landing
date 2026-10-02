@@ -1,6 +1,7 @@
 import type { SiteConfig } from "@/types/site";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://happyclean.id";
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://happyclean-landing.vercel.app";
 
 export const siteConfig: SiteConfig = {
   name: "HappyClean",
